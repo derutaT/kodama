@@ -1,0 +1,19 @@
+{
+  "name": "google-home-speaking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ghs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "y"
+  },
+  "author": "Masaki Hara",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.134.0",
+    "google-home-notifier": "^1.2.0"
+  }
+}
