@@ -7,8 +7,8 @@ aws.config.loadFromPath('credentials.json');
 aws.config.update({region: 'ap-northeast-1'});
 
 // 外部設定ファイル
-var ini = require('./config.json');
-var url = ini.sqs_url
+var config = require('./config.json');
+var url = config.sqs_url
 
 var sqs = new aws.SQS();
 
@@ -17,7 +17,7 @@ var limit = 100;
 
 // Google Home Settings
 googlehome.device('Google Home', 'ja');
-googlehome.ip('192.168.10.4');
+googlehome.ip(config.google_home.ip_address);
 googlehome.accent('ja');
 
 console.log('start');

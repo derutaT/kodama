@@ -1,13 +1,17 @@
 var express = require('express');
-var googlehome = require('./google-home-notifier');
+var googlehome = require('google-home-notifier');
 var ngrok = require('ngrok');
 var bodyParser = require('body-parser');
 var app = express();
 const serverPort = 8080;
 
-var deviceName = 'リビング';
-googlehome.device(deviceName);
-//googlehome.accent('uk'); // uncomment for british voice
+// 外部設定ファイル
+var config = require('./config.json');
+
+// Google Home Settings
+googlehome.device('Google Home', 'ja');
+googlehome.ip(config.google_home.ip_address);
+googlehome.accent('ja');
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
